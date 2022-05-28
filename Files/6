@@ -1,0 +1,29 @@
+import requests
+url = 'https://en.wikipedia.org/wiki/Stock_market'
+
+response = requests.get(url, timeout=3) #timeout set to stop the request action in case of hanging
+print('Status code: ',response.status_code)
+if response.status_code==200:
+    print('Connection successful.\n\n')
+else:
+    print('Error. Check status code table.\n\n')
+
+from bs4 import BeautifulSoup
+# Feed the response's .content into BeauitfulSoup
+page_content = response.content
+soup = BeautifulSoup(page_content,'lxml') #'html.parser')
+
+# Preview soup contents using .prettify()
+print(soup.prettify()[:2000])
+
+body = soup.body
+for child in body.children:
+    # print child if its not empty
+    print(child if child is not None else ' ', '\n\n')  # '\n\n' for visual separation
+
+title = soup.head.title
+print(title.parent.name)
+
+results = soup.find_all()
+
+results
