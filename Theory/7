@@ -1,0 +1,9 @@
+A focused crawler is a web crawler that collects Web pages that satisfy some specific
+property, by carefully prioritizing the crawl frontier and managing the hyperlink exploration
+process. Some predicates may be based on simple, deterministic and surface properties. For
+example, a crawler's mission may be to crawl pages from only the .jp domain. Other
+predicates may be softer or comparative, e.g., "crawl pages about baseball", or "crawl pages
+with large PageRank". An important page property pertains to topics, leading to 'topical
+crawlers'. For example, a topical crawler may be deployed to collect pages about solar power,
+swine flu, or even more abstract concepts like controversy while minimizing resources spent
+fetching pages on other topics.
